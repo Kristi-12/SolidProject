@@ -1,9 +1,8 @@
-package i.before;
+package i.after;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-public class DVD implements LibraryItem {
+public class ReferenceBook implements LibraryItem {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -11,12 +10,11 @@ public class DVD implements LibraryItem {
     String libraryId;
     int pages;
     String title;
-    List<String> actors;
-    int runtimeInMinutes;
+
 
     @Override
     public String getAuthor() {
-        return "";
+        return author;
     }
 
     @Override
@@ -31,7 +29,7 @@ public class DVD implements LibraryItem {
 
     @Override
     public int getCheckOutDurationInDays() {
-        return 14;
+        return 0;
     }
 
     @Override
@@ -41,7 +39,7 @@ public class DVD implements LibraryItem {
 
     @Override
     public int getPages() {
-        return -1;
+        return pages;
     }
 
     @Override
@@ -51,25 +49,16 @@ public class DVD implements LibraryItem {
 
     @Override
     public void checkIn() {
-        borrower = "";
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void checkOut(String borrower) {
-        this.borrower = borrower;
-        borrowDate = LocalDateTime.now();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public LocalDateTime getDueDate() {
-        return borrowDate.plusDays(checkOutDurationInDays);
-    }
-
-    public List<String> getActors() {
-        return actors;
-    }
-
-    public int getRuntimeInMinutes() {
-        return runtimeInMinutes;
+        throw new UnsupportedOperationException();
     }
 }

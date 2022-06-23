@@ -1,4 +1,4 @@
-package l.before;
+package l.after;
 
 public class Manager extends Employee {
 

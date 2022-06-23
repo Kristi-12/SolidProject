@@ -1,10 +1,8 @@
-package i.before;
-
-import jdk.jshell.spi.ExecutionControl;
+package i.after;
 
 import java.time.LocalDateTime;
 
-public class ReferenceBook implements LibraryItem {
+public class AudioBook implements LibraryItem {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -12,6 +10,7 @@ public class ReferenceBook implements LibraryItem {
     String libraryId;
     int pages;
     String title;
+    int runtimeInMinutes;
 
 
     @Override
@@ -31,7 +30,7 @@ public class ReferenceBook implements LibraryItem {
 
     @Override
     public int getCheckOutDurationInDays() {
-        return 0;
+        return checkOutDurationInDays;
     }
 
     @Override
@@ -41,7 +40,7 @@ public class ReferenceBook implements LibraryItem {
 
     @Override
     public int getPages() {
-        return pages;
+        return -1;
     }
 
     @Override
@@ -51,16 +50,21 @@ public class ReferenceBook implements LibraryItem {
 
     @Override
     public void checkIn() {
-        throw new UnsupportedOperationException();
+        borrower = "";
     }
 
     @Override
     public void checkOut(String borrower) {
-        throw new UnsupportedOperationException();
+        this.borrower = borrower;
+        borrowDate = LocalDateTime.now();
     }
 
     @Override
     public LocalDateTime getDueDate() {
-        throw new UnsupportedOperationException();
+        return borrowDate.plusDays(checkOutDurationInDays);
+    }
+
+    public int getRuntimeInMinutes() {
+        return runtimeInMinutes;
     }
 }

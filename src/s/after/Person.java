@@ -1,4 +1,4 @@
-package s.before;
+package s.after;
 
 public class Person {
     String firstName;

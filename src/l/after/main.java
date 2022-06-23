@@ -1,4 +1,4 @@
-package l.before;
+package l.after;
 
 public class main {
     public static void main(String[] args) {

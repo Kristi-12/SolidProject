@@ -1,4 +1,4 @@
-package d.before;
+package d.after;
 
 public class Email {
     public void sendEmail(Person person, String message) {

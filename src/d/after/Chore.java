@@ -1,4 +1,4 @@
-package d.before;
+package d.after;
 
 public class Chore {
     public String choreName;

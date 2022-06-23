@@ -1,4 +1,4 @@
-package s.before;
+package s.after;
 
 import java.util.Scanner;
 

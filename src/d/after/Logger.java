@@ -1,4 +1,4 @@
-package d.before;
+package d.after;
 
 public class Logger {
     public void log(String message) {
